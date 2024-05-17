@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<title>redacted</title>
+<link rel="stylesheet" type="text/css" href="phase.css">
+
+</head>
+
+<style>
+
+        .zoom-container {
+            width: 100%px;
+            height: 100%px;
+			margin: center;
+            overflow: async%;
+            position: hidden;
+            cursor: zoom-in;
+        }
+
+        .zoom-image {
+            width: 100%;
+            transition: transform 0.1s ease;
+			transform-origin: left center;
+        }
+
+        .zoom-container.zoomed .zoom-image {
+            transform: scale(4);
+            cursor: zoom-out;
+        }
+    </style>
+
+
+<body>
+
+
+
+<class="zoom-container" onclick="this.classList.toggle('zoomed')">	
+<img src="images/props.png" alt="Hover Image" class="hover-image" id="hoverImage">
+
+<audio id="hoverAudio">
+    <source src="Sounds/Shhhhh.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+</audio>
+
+<script>
+    const hoverImage = document.getElementById('hoverImage');
+    const hoverAudio = document.getElementById('hoverAudio');
+
+    hoverImage.addEventListener('mouseenter', () => {
+        hoverAudio.play();
+    });
+
+    hoverImage.addEventListener('mouseleave', () => {
+        hoverAudio.pause();
+        hoverAudio.currentTime = 0; // Reset audio to the beginning
+    });
+</script>
+
+</body>
+</html>

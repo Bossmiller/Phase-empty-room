@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom Effect</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .zoom-container {
+            width: 100%px;
+            height: 100%px;
+			margin: center;
+            overflow: async%;
+            position: hidden;
+            cursor: zoom-in;
+        }
+
+        .zoom-image {
+            width: 100%;
+            transition: transform 0.1s ease;
+			transform-origin: left center;
+        }
+
+        .zoom-container.zoomed .zoom-image {
+            transform: scale(4);
+            cursor: zoom-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="zoom-container" onclick="this.classList.toggle('zoomed')">
+        <img src="Images/props.png" alt="Zoom Image" class="zoom-image">
+    </div>
+</body>
+</html>
